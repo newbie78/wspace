@@ -1,0 +1,14 @@
+version: '3'
+
+networks:
+  site1-network:
+    external: true
+
+services:
+
+  site1:
+    image: nginx:alpine
+    volumes:
+      - .:/usr/share/nginx/html/
+    networks:
+      - site1-network

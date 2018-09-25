@@ -1,0 +1,21 @@
+version: '3'
+
+networks:
+  site1-network:
+    external: true
+
+  site2-network:
+    external: true
+
+services:
+  proxy:
+    image: nginx:alpine
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/nginx.conf
+      - ./backend-not-found.html:/var/www/html/backend-not-found.html
+      - ./proxy.conf:/etc/nginx/includes/proxy.conf    
+    networks:
+      - site1-network
+      - site2-network
+    ports:
+      - 80:80
