@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-docker network create site1-network || true
-docker network create site2-network || true
+docker network create socialdevelop-client-network || true
+docker network create socialdevelop-server-network || true
+docker network create secondtest-client-network || true
 
-cd site1 && docker-compose up -d
-cd ../site2 && docker-compose up -d
-cd ../reverse_proxy && docker-compose up -d
+cd socialdevelop/client && docker-compose up -d
+cd ../../socialdevelop/server && docker-compose up -d
+cd ../../secondtest/client && docker-compose up -d
+
+cd ../../reverse_proxy && docker-compose up -d

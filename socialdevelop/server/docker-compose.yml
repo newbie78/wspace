@@ -1,14 +1,14 @@
 version: '3'
 
 networks:
-  site1-network:
+  socialdevelop-server-network:
     external: true
 
 services:
-
-  site1:
+  socialdevelop-server:
+    container_name: socialdevelop-server
     image: nginx:alpine
     volumes:
       - .:/usr/share/nginx/html/
     networks:
-      - site1-network
+      - socialdevelop-server-network

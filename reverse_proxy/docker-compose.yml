@@ -1,21 +1,26 @@
 version: '3'
 
 networks:
-  site1-network:
+  socialdevelop-client-network:
     external: true
 
-  site2-network:
+  socialdevelop-server-network:
+    external: true
+
+  secondtest-client-network:
     external: true
 
 services:
   proxy:
+    container_name: reverse-proxy
     image: nginx:alpine
     volumes:
       - ./default.conf:/etc/nginx/conf.d/nginx.conf
       - ./backend-not-found.html:/var/www/html/backend-not-found.html
       - ./proxy.conf:/etc/nginx/includes/proxy.conf    
     networks:
-      - site1-network
-      - site2-network
+      - socialdevelop-client-network
+      - socialdevelop-server-network
+      - secondtest-client-network
     ports:
       - 80:80

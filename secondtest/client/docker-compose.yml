@@ -1,0 +1,14 @@
+version: '3'
+
+networks:
+  secondtest-client-network:
+    external: true
+
+services:
+  secondtest-client:
+    container_name: secondtest-client
+    image: nginx:alpine
+    volumes:
+      - .:/usr/share/nginx/html/
+    networks:
+      - secondtest-client-network
