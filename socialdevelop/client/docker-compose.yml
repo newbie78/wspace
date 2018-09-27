@@ -7,8 +7,9 @@ networks:
 services:
   socialdevelop-client:
     container_name: socialdevelop-client
-    image: nginx:alpine
+    image: ebiven/vue-cli
+    command: yarn serve
     volumes:
-      - .:/usr/share/nginx/html/
+      - .:/code
     networks:
       - socialdevelop-client-network
