@@ -1,0 +1,22 @@
+version: '3'
+
+networks:
+  proxy_network:
+    external: true
+  mysql_network:
+    external: true
+  mongo_network:
+    external: true
+
+services:
+  adminer:
+    container_name: adminer
+    image: dockette/adminer:full
+    restart: always
+    environment:
+      MEMORY: 512M
+      UPLOAD: 4096M
+    networks:
+      - proxy_network
+      - mysql_network
+      - mongo_network
