@@ -1,14 +1,13 @@
 version: '3'
 
 networks:
-  secondtest-client-network:
+  proxy_network:
     external: true
 
 services:
-  secondtest-client:
-    container_name: secondtest-client
+  simple_client:
     image: nginx:alpine
     volumes:
       - .:/usr/share/nginx/html/
     networks:
-      - secondtest-client-network
+      - proxy_network

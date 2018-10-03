@@ -1,0 +1,14 @@
+version: '3'
+
+networks:
+  proxy_network:
+    external: true
+
+services:
+  socialdevelop_client:
+    image: ebiven/vue-cli
+    command: yarn serve
+    volumes:
+      - .:/code
+    networks:
+      - proxy_network

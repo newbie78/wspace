@@ -1,15 +1,14 @@
 version: '3'
 
 networks:
-  socialdevelop-client-network:
+  proxy_network:
     external: true
 
 services:
-  socialdevelop-client:
-    container_name: socialdevelop-client
+  oreshek_client:
     image: ebiven/vue-cli
     command: yarn serve
     volumes:
       - .:/code
     networks:
-      - socialdevelop-client-network
+      - proxy_network
