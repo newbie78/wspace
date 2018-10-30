@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  testparcel_client:
+    image: newbie39/parcel
+    user: "${UID}:${GID}"
+    command: parcel --hmr-port 9000 src/index.html
+    volumes:
+      - .:/code
+    ports:
+      - "8080:1234"
+      - "9000:9000"

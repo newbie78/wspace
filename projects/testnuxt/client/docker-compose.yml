@@ -1,0 +1,15 @@
+version: '3'
+
+networks:
+  proxy_network:
+    external: true
+
+services:
+  testnuxt_client:
+    image: newbie39/vue_with_init:version1
+    user: "${UID}:${GID}"
+    command: yarn dev
+    volumes:
+      - .:/code
+    networks:
+      - proxy_network

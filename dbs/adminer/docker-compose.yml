@@ -12,7 +12,6 @@ services:
   adminer:
     container_name: adminer
     image: dockette/adminer:full
-    restart: always
     environment:
       MEMORY: 512M
       UPLOAD: 4096M

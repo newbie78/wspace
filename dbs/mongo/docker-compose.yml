@@ -8,7 +8,7 @@ services:
   mongo:
     container_name: mongo
     image: mongo:4
-    restart: always
+    user: "${UID}:${GID}"
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: changeme
