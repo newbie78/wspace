@@ -1,7 +1,7 @@
 FROM composer:1.7 AS composer
 FROM php:7.2-fpm-alpine
 
-LABEL maintainer="contact@socialdevelop.biz"
+LABEL maintainer="Rodion Konnov <contact@socialdevelop.biz>"
 
 # composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer

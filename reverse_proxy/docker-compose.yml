@@ -16,3 +16,4 @@ services:
       - proxy_network
     ports:
       - 80:80
+      - 9000:9000

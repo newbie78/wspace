@@ -15,7 +15,7 @@ docker network create proxy_network
 
 cd ./projects/simple/client && docker-compose -p simple1 up -d
 cd ../../testparcel/client && docker-compose -p parcel1 up -d
-cd ../../testnuxt/client && docker-compose -p testnuxt up -d
+# cd ../../testnuxt/client && docker-compose -p testnuxt up -d
 
 # cd ../../mylib/client && docker-compose -p mylib1 up -d
 
